@@ -40,6 +40,9 @@ node {
     // Deploy using the /wardeploy API on the Kudu site. We authenticate using the FTP username and password.
     sh "curl -X POST -u $$freebergtomcat:${ftpProfile.password} --data-binary @target/calculator-1.0.war https://${webAppName}.scm.azurewebsites.net/api/wardeploy"
 
+    
+    
+    
     // Log out
     sh 'az logout'
   }
