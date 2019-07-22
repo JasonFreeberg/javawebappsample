@@ -45,8 +45,8 @@ node {
    //   curl -X POST -u \\\\\$freebergtomcat:${ftpProfile.password} --data-binary @target/calculator-1.0.war https://${webAppName}.scm.azurewebsites.net/api/wardeploy
     //'''
     
-    sh 'curl -X POST -u \\$freebergtomcat:${ftpProfile.password} --data-binary @target/calculator-1.0.war https://${webAppName}.scm.azurewebsites.net/api/wardeploy'
-    sh 'curl -X POST -u $$freebergtomcat:${ftpProfile.password} --data-binary @target/calculator-1.0.war https://${webAppName}.scm.azurewebsites.net/api/wardeploy'
+    sh 'curl -X POST -u \\$freebergtomcat'+":${ftpProfile.password} --data-binary @target/calculator-1.0.war https://${webAppName}.scm.azurewebsites.net/api/wardeploy'
+    //sh 'curl -X POST -u $$freebergtomcat:${ftpProfile.password} --data-binary @target/calculator-1.0.war https://${webAppName}.scm.azurewebsites.net/api/wardeploy'
     
     // Log out
     sh 'az logout'
