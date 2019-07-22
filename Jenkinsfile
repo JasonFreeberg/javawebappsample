@@ -18,11 +18,11 @@ node {
   
   stage('deploy') {
     // Replace these values with your Resource Group and App Service name
-    def resourceGroup = '<myResourceGroup>' 
-    def webAppName = '<app_name>'
+    def resourceGroup = 'freebergJenkinsDemo' 
+    def webAppName = 'freebergtomcat'
     
     // Log in to Azure using the service principal
-    withCredentials([azureServicePrincipal('<mySrvPrincipal>')]) {
+    withCredentials([azureServicePrincipal('service-principal-for-app-service')]) {
       sh '''
         az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
         az account set -s $AZURE_SUBSCRIPTION_ID
