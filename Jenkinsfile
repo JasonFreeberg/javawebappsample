@@ -13,6 +13,7 @@ node {
   }
   
   stage('build') {
+    sh 'echo "building WAR with Maven..."  '
     sh 'mvn clean package'
   }
   
